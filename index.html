@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>💃 ليلة حنة يارا — Egyptian Night ✨</title>
+<meta name="description" content="أنتِ مدعوة لليلة حنة يارا! ١٧ يوليو ٢٠٢٦، فيلا ٧٠ البنفسج."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Cairo','DM Sans',sans-serif;background:#120508;color:#fdf2e9;overflow-x:hidden;}
+
+:root{
+  --red:#c0392b;--red-deep:#8b0000;--red-light:#e57373;
+  --gold:#c8a882;--gold-light:#d4bc96;--gold-pale:#f0e6d0;
+  --leo-tan:#c8a882;--leo-dark:#5c0612;
+  --cream:#fdf2e9;--text-gold:#e8d5b7;
+  --bg:#120508;--bg-mid:#1e080e;--bg-card:#2a0c14;
+}
+
+/* ── Film grain ── */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.04;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+/* ── Keyframes ── */
+@keyframes hipSway{0%,100%{transform:translateX(-9px) rotate(-2.5deg)}50%{transform:translateX(9px) rotate(2.5deg)}}
+@keyframes armL{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-7px) rotate(4deg)}}
+@keyframes armR{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-7px) rotate(-4deg)}}
+@keyframes veilWave{0%,100%{transform:translateX(0) skewX(0deg)}50%{transform:translateX(14px) skewX(5deg)}}
+@keyframes bodyBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulseBeat{0%,100%{transform:scale(1);opacity:.75}50%{transform:scale(1.1);opacity:1}}
+@keyframes shimmer{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes starTwinkle{0%,100%{opacity:.1}50%{opacity:.95}}
+@keyframes goldFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes loadIn{0%{opacity:0;transform:scale(.88)}25%{opacity:1;transform:scale(1)}75%{opacity:1}100%{opacity:0;transform:scale(1.06)}}
+@keyframes dotPop{0%,100%{transform:scale(1);opacity:.35}50%{transform:scale(1.6);opacity:1}}
+@keyframes confettiFall{0%{transform:translateY(-20px) rotate(0);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@keyframes petalDrift{0%{transform:translateY(-30px) rotate(0);opacity:0}10%{opacity:.85}90%{opacity:.55}100%{transform:translateY(110vh) rotate(560deg);opacity:0}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes rsvpPop{0%{transform:scale(.78);opacity:0}60%{transform:scale(1.07)}100%{transform:scale(1);opacity:1}}
+@keyframes endingDrift{0%{transform:translateY(20px);opacity:0}15%{opacity:.65}85%{opacity:.65}100%{transform:translateY(-130px);opacity:0}}
+@keyframes glowBorder{0%,100%{box-shadow:0 0 18px rgba(212,160,23,.3)}50%{box-shadow:0 0 40px rgba(212,160,23,.7),0 0 80px rgba(192,57,43,.3)}}
+
+/* ── Loading ── */
+#loading-screen{
+  position:fixed;inset:0;z-index:10000;
+  background:linear-gradient(135deg,#120508,#2d0d0d,#1a0a00);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .85s ease-out,visibility .85s;
+}
+.loading-inner{text-align:center;animation:loadIn 2.6s ease forwards;}
+.loading-name{
+  font-family:'Dancing Script',cursive;font-size:86px;font-weight:700;line-height:1;
+  background:linear-gradient(135deg,#c8a882,#d4bc96,#c0392b,#c8a882);
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:goldFlow 2s linear infinite;
+}
+.loading-sub{font-family:'Playfair Display',serif;font-size:18px;color:var(--text-gold);margin-top:10px;letter-spacing:4px;font-style:italic;}
+.loading-dots{margin-top:26px;display:flex;justify-content:center;gap:10px;}
+.loading-dots span{width:9px;height:9px;border-radius:50%;background:var(--red);animation:dotPop 1.2s ease-in-out infinite;}
+.loading-dots span:nth-child(2){animation-delay:.2s;background:var(--gold);}
+.loading-dots span:nth-child(3){animation-delay:.4s;background:var(--leo-tan);}
+
+/* ── Dancer Screen ── */
+#dancer-screen{
+  min-height:100vh;
+  background:radial-gradient(ellipse at 50% 38%,#2d0d0d 0%,#120508 65%,#08020a 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;position:relative;overflow:hidden;padding:40px 20px;
+  user-select:none;-webkit-user-select:none;
+}
+#dancer-stars{position:absolute;inset:0;pointer-events:none;}
+.leo-stripe{position:absolute;left:0;right:0;height:7px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--gold-pale),var(--gold),transparent);
+  opacity:.85;}
+.leo-stripe.top{top:0;} .leo-stripe.bottom{bottom:0;}
+.dancer-wrap{position:relative;z-index:2;animation:bodyBob 3.2s ease-in-out infinite;
+  filter:drop-shadow(0 0 35px rgba(212,160,23,.45));}
+.d-arm-l{transform-origin:88px 118px;animation:armL 2.4s ease-in-out infinite;}
+.d-arm-r{transform-origin:112px 118px;animation:armR 2.4s ease-in-out infinite .35s;}
+.d-hips{transform-origin:100px 182px;animation:hipSway 1.9s ease-in-out infinite;}
+.d-veil{transform-origin:165px 62px;animation:veilWave 2.8s ease-in-out infinite;opacity:.45;}
+.touch-label{position:relative;z-index:2;margin-top:6px;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);animation:pulseBeat 2.1s ease-in-out infinite;}
+.touch-main{font-family:'Dancing Script',cursive;font-size:clamp(40px,8vw,62px);color:var(--gold-pale);text-align:center;position:relative;z-index:2;text-shadow:0 0 24px rgba(212,160,23,.65);line-height:1;}
+.touch-sub{font-size:12px;letter-spacing:4px;color:var(--leo-tan);text-transform:uppercase;animation:shimmer 3s ease-in-out infinite;position:relative;z-index:2;margin-top:10px;}
+
+/* ── Dividers ── */
+.gold-div{height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--leo-tan),var(--gold),transparent);}
+.leo-div{height:4px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-pale),var(--gold),transparent);opacity:.7;}
+
+/* ── Scroll Reveal ── */
+.reveal-section{opacity:0;transform:translateY(42px);transition:opacity 1.2s cubic-bezier(.215,.61,.355,1),transform 1.2s cubic-bezier(.215,.61,.355,1);}
+.reveal-section.revealed{opacity:1;transform:translateY(0);}
+.reveal-child{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.215,.61,.355,1),transform .9s cubic-bezier(.215,.61,.355,1);}
+.reveal-section.revealed .reveal-child{opacity:1;transform:translateY(0);}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.25s}.rd3{transition-delay:.4s}.rd4{transition-delay:.55s}
+
+/* ── Music button ── */
+#music-btn{
+  position:fixed;top:20px;right:20px;z-index:1000;
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(18,5,8,.88);border:1.5px solid var(--gold);
+  color:var(--gold);font-size:20px;cursor:pointer;
+  display:none;align-items:center;justify-content:center;
+  backdrop-filter:blur(10px);transition:transform .2s;
+  box-shadow:0 2px 18px rgba(212,160,23,.3);
+}
+#music-btn:hover{transform:scale(1.12);}
+
+/* ── Section labels & titles ── */
+.s-label{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;}
+.s-title{font-family:'Playfair Display',serif;color:var(--cream);font-size:clamp(22px,4vw,38px);margin-bottom:14px;}
+.s-sub{font-style:italic;font-size:15px;color:var(--leo-tan);max-width:460px;margin:0 auto;line-height:1.75;}
+
+/* ── Hero ── */
+.hero-section{
+  background:linear-gradient(160deg,#1a0508 0%,#2d0d0d 50%,#1a0a00 100%);
+  padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;
+}
+.hero-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(192,57,43,.18) 0%,transparent 60%);pointer-events:none;}
+
+/* ── Countdown ── */
+.cbox{
+  background:linear-gradient(160deg,#1e0810,#2a0d0d);
+  border-radius:16px;padding:20px 18px;min-width:82px;text-align:center;
+  box-shadow:0 4px 24px rgba(192,57,43,.2);border:1.5px solid rgba(212,160,23,.3);
+  transition:transform .2s,box-shadow .2s;
+}
+.cbox:hover{transform:scale(1.06);box-shadow:0 8px 32px rgba(212,160,23,.3);}
+.cnum{font-size:clamp(30px,6vw,50px);font-weight:300;color:var(--gold-light);line-height:1;font-family:'Playfair Display',serif;}
+.clbl{font-size:11px;letter-spacing:3px;color:var(--red-light);margin-top:6px;text-transform:uppercase;font-weight:500;}
+
+/* ── Venue ── */
+#venue-bg{position:absolute;inset:-60px;background-size:cover;background-position:center;will-change:transform;}
+#venue-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(18,5,8,.55),rgba(8,2,4,.82));}
+#venue-content{position:relative;z-index:2;text-align:center;padding:90px 24px;}
+
+/* ── Schedule ── */
+.sched-item{display:flex;align-items:center;margin-bottom:28px;text-align:left;position:relative;}
+.sched-item:not(:last-child)::after{content:'';position:absolute;left:116px;top:42px;width:2px;height:28px;background:linear-gradient(to bottom,var(--gold),transparent);opacity:.35;}
+.sched-time{font-family:'Playfair Display',serif;font-size:14px;color:var(--gold);width:90px;font-weight:700;flex-shrink:0;}
+.sched-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2a0d0d,#1e0810);color:var(--text-gold);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 20px;border:1.5px solid rgba(212,160,23,.4);flex-shrink:0;}
+.sched-det h4{font-family:'Playfair Display',serif;color:var(--cream);font-size:16px;}
+.sched-det p{font-size:14px;color:var(--leo-tan);font-style:italic;margin-top:3px;}
+
+/* ── Dress Code ── */
+#dress-section{padding:72px 24px;text-align:center;background:linear-gradient(160deg,#1a0508,#1a0a00);position:relative;overflow:hidden;}
+.dress-cards{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;max-width:600px;margin:40px auto 0;}
+.dress-card{flex:1;min-width:200px;max-width:260px;border-radius:20px;padding:36px 20px;text-align:center;transition:transform .3s,box-shadow .3s;cursor:default;}
+.dress-card:hover{transform:translateY(-7px);}
+.dress-red{background:linear-gradient(135deg,#8b0000,#c0392b);box-shadow:0 8px 32px rgba(192,57,43,.4);border:1.5px solid rgba(212,160,23,.3);}
+.dress-leo{background:linear-gradient(135deg,#4a2e00,#8b5e2a);box-shadow:0 8px 32px rgba(201,149,108,.4);border:1.5px solid rgba(201,149,108,.45);}
+.dress-icon{font-size:56px;margin-bottom:18px;display:block;}
+.dress-name{font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:8px;}
+.dress-desc{font-size:13px;color:rgba(255,255,255,.72);letter-spacing:1px;}
+
+/* ── Outfit Puzzle ── */
+#outfit-section{background:var(--bg);padding:72px 24px;text-align:center;}
+.outfit-stage{
+  position:relative;width:200px;height:340px;margin:28px auto;
+  border:2px solid rgba(212,160,23,.3);border-radius:16px;
+  background:linear-gradient(160deg,#1e0810,#2a0d0d);
+  overflow:hidden;box-shadow:0 8px 32px rgba(192,57,43,.2);
+}
+.o-layer{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;}
+.o-layer.active{opacity:1;}
+.outfit-choices{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:28px;}
+.o-btn{
+  width:92px;height:122px;border-radius:14px;border:2px solid rgba(212,160,23,.3);
+  background:linear-gradient(160deg,#1e0810,#2a0d0d);
+  cursor:pointer;transition:all .3s;overflow:hidden;padding:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.o-btn:hover,.o-btn.selected{border-color:var(--gold);transform:scale(1.06);box-shadow:0 4px 22px rgba(212,160,23,.35);}
+.o-btn svg{width:100%;height:100%;}
+.reveal-btn{
+  display:inline-block;margin-top:28px;padding:15px 44px;
+  font-family:'Playfair Display',serif;font-size:15px;letter-spacing:2px;
+  background:linear-gradient(135deg,var(--red),#8b0000);color:#fff;border:none;
+  border-radius:50px;cursor:pointer;transition:all .3s;
+  box-shadow:0 8px 24px rgba(192,57,43,.4);
+}
+.reveal-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(192,57,43,.5);}
+#outfit-result{display:none;margin-top:22px;animation:rsvpPop .5s ease both;}
+
+/* ── Dare Wheel ── */
+#spin-section{background:var(--bg-mid);padding:72px 24px;text-align:center;overflow:hidden;}
+#wheel-canvas{border-radius:50%;box-shadow:0 8px 44px rgba(192,57,43,.45),0 0 0 5px rgba(212,160,23,.25);cursor:pointer;}
+#spin-result{
+  display:none;margin:24px auto 0;
+  background:var(--bg-card);border:1.5px solid rgba(212,160,23,.3);
+  border-radius:16px;padding:24px 32px;max-width:320px;
+  box-shadow:0 4px 24px rgba(192,57,43,.2);
+}
+
+/* ── Song Request & Forms ── */
+#songs-section{background:linear-gradient(160deg,#1a0a00,#1a0508);padding:72px 24px;text-align:center;}
+.form-wrap{background:var(--bg-card);border-radius:20px;padding:28px;border:1.5px solid rgba(212,160,23,.15);box-shadow:0 8px 32px rgba(0,0,0,.35);max-width:480px;margin:32px auto 0;}
+.f-label{font-family:'Playfair Display',serif;font-size:12px;color:var(--gold);letter-spacing:1px;font-weight:700;display:block;margin-bottom:8px;text-align:left;}
+.f-input{
+  font-family:'DM Sans',sans-serif;outline:none;background:#1e0810;color:var(--cream);
+  border:1.5px solid rgba(212,160,23,.2);padding:12px 16px;
+  border-radius:12px;width:100%;font-size:15px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.f-input::placeholder{color:rgba(253,232,216,.3);}
+.f-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,160,23,.13);}
+
+/* ── Primary buttons ── */
+.primary-btn{
+  display:inline-block;padding:15px 48px;
+  font-family:'Playfair Display',serif;font-size:16px;letter-spacing:2px;
+  background:linear-gradient(135deg,#c0392b,#8b0000);color:#fff;border:none;
+  border-radius:50px;cursor:pointer;transition:all .3s;
+  box-shadow:0 8px 24px rgba(192,57,43,.4);
+}
+.primary-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(192,57,43,.5);}
+.gold-btn{
+  display:inline-flex;align-items:center;gap:10px;padding:14px 36px;
+  font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:1px;font-weight:500;
+  background:transparent;color:var(--gold);border:1.5px solid var(--gold);
+  border-radius:50px;cursor:pointer;transition:all .3s;text-decoration:none;
+  box-shadow:0 4px 16px rgba(212,160,23,.15);
+}
+.gold-btn:hover{background:linear-gradient(135deg,#c8a882,#c0392b);color:#fff;border-color:transparent;box-shadow:0 8px 24px rgba(212,160,23,.4);}
+
+/* ── Bridesmaids ── */
+#bridesmaids-section{background:linear-gradient(160deg,#1a0a00,#120508);padding:72px 24px;text-align:center;}
+.bm-grid{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:48px;}
+.bm-card{
+  background:var(--bg-card);border-radius:20px;padding:32px 20px;width:200px;text-align:center;
+  border:1.5px solid rgba(212,160,23,.2);box-shadow:0 8px 32px rgba(0,0,0,.3);
+  transition:transform .3s,box-shadow .3s;
+}
+.bm-card:hover{transform:translateY(-8px);box-shadow:0 16px 48px rgba(192,57,43,.3);}
+.bm-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:32px;border:2.5px solid rgba(212,160,23,.4);}
+.bm-moh{background:linear-gradient(135deg,#c8a882,#c0392b);}
+.bm-bm{background:linear-gradient(135deg,#8b0000,#4a2e00);}
+.bm-role{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.bm-name{font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);margin-bottom:4px;}
+.bm-tag{font-size:13px;color:var(--leo-tan);font-style:italic;}
+
+/* ── Photo Booth ── */
+#booth-section{background:var(--bg-mid);padding:72px 24px;text-align:center;}
+.booth-view{position:relative;border-radius:16px;overflow:hidden;border:3px solid rgba(212,160,23,.4);box-shadow:0 8px 32px rgba(192,57,43,.3);}
+#booth-video{width:100%;display:block;transform:scaleX(-1);}
+.booth-overlay{position:absolute;bottom:0;left:0;right:0;padding:10px;background:linear-gradient(to top,rgba(18,5,8,.94),transparent);}
+.booth-overlay-text{font-family:'Dancing Script',cursive;font-size:16px;color:var(--gold-pale);letter-spacing:1px;}
+.booth-btn{
+  display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 28px;
+  font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:1px;
+  background:linear-gradient(135deg,#c0392b,#8b0000);color:#fff;border:none;
+  border-radius:50px;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(192,57,43,.3);
+}
+.booth-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(192,57,43,.4);}
+
+/* ── RSVP ── */
+#rsvp-section{background:linear-gradient(160deg,#1a0508,#2d0d0d,#1a0a00);padding:72px 24px;text-align:center;}
+#rsvp-confirm{display:none;margin-top:32px;}
+
+/* ── Cinematic Ending ── */
+#cinematic-ending{
+  background:linear-gradient(160deg,#0a0205,#120508,#0a0400);
+  padding:130px 24px;text-align:center;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:420px;
+}
+.ending-quote{
+  font-family:'Dancing Script',cursive;font-size:clamp(22px,4vw,38px);
+  color:var(--gold-pale);max-width:640px;line-height:1.85;
+  opacity:0;transform:translateY(22px);transition:opacity 2s ease,transform 2s ease;
+  z-index:2;text-shadow:0 0 22px rgba(212,160,23,.5);
+}
+#cinematic-ending.revealed .ending-quote{opacity:1;transform:translateY(0);}
+.ending-stars{position:absolute;inset:0;pointer-events:none;}
+
+/* ── Confetti ── */
+.confetti-piece{position:fixed;width:8px;height:8px;border-radius:2px;animation:confettiFall linear forwards;pointer-events:none;z-index:999;}
+
+/* ── Save date btn ── */
+.save-date-btn{
+  display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:14px 36px;
+  font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:1px;font-weight:500;
+  background:transparent;color:var(--gold);border:1.5px solid var(--gold);
+  border-radius:50px;cursor:pointer;transition:all .3s;text-decoration:none;
+}
+.save-date-btn:hover{background:linear-gradient(135deg,#c8a882,#c0392b);color:#fff;border-color:transparent;}
+
+/* ── Interactive Kiss Trigger ── */
+.rsvp-kiss-wrap {
+  cursor:pointer;
+  display:inline-block;
+  margin:28px auto 0;
+  position:relative;
+  transition:transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.rsvp-kiss-wrap:hover {
+  transform:scale(1.08);
+}
+.rsvp-kiss-wrap:active {
+  transform:scale(0.95);
+}
+.rsvp-kiss-mark {
+  font-size:76px;
+  line-height:1;
+  user-select:none;
+  filter:drop-shadow(0 0 12px rgba(192,57,43,0.7));
+  animation:pulseBeat 1.8s infinite ease-in-out;
+}
+.rsvp-kiss-label {
+  font-family:'Playfair Display',serif;
+  font-size:13px;
+  color:var(--gold-pale);
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-top:12px;
+  text-shadow:0 0 10px rgba(212,160,23,0.4);
+  font-weight:700;
+}
+
+@media(max-width:600px){
+  .cbox{min-width:68px;padding:16px 10px;}
+  .bm-grid{gap:14px;}
+  .bm-card{width:150px;padding:24px 12px;}
+  .dress-cards{flex-direction:column;align-items:center;}
+  .dress-card{min-width:240px;}
+  .timeline-days-wrap > div[style*="width:2px"]{display:none;}
+  .timeline-days-wrap > div[style*="flex:1"]{padding:0 0 32px 0 !important;border-bottom:1px solid rgba(212,160,23,0.2);}
+  .timeline-days-wrap > div[style*="flex:1"]:last-child{border-bottom:none;padding-bottom:0 !important;}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+  <div class="loading-inner">
+    <div class="loading-name">يارا</div>
+    <div class="loading-sub">ليلة الحنة 💃</div>
+    <div class="loading-dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+
+<!-- Animated favicon -->
+<script>
+(function(){
+  const c=document.createElement('canvas');c.width=32;c.height=32;
+  const ctx=c.getContext('2d');
+  const lnk=document.createElement('link');lnk.rel='icon';lnk.type='image/png';
+  document.head.appendChild(lnk);
+  ctx.font='22px serif';ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText('🔥',16,16);lnk.href=c.toDataURL();
+})();
+</script>
+
+<!-- Music -->
+<audio id="bgm" loop preload="auto">
+  <source src="bach.mp3" type="audio/mpeg">
+  <source src="bach.m4a" type="audio/mp4">
+</audio>
+<button id="music-btn" onclick="toggleMusic()" title="Toggle music">🔇</button>
+
+<!-- ══════════════════════════════════════
+     BELLY DANCER OPENING SCREEN
+══════════════════════════════════════ -->
+<div id="dancer-screen" onclick="openInvitation()">
+  <div class="leo-stripe top"></div>
+  <div class="leo-stripe bottom"></div>
+  <div id="dancer-stars"></div>
+
+  <div class="dancer-wrap">
+    <svg width="210" height="420" viewBox="0 0 210 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="skinG" cx="50%" cy="38%"><stop offset="0%" stop-color="#f5cba7"/><stop offset="100%" stop-color="#d4956a"/></radialGradient>
+        <linearGradient id="dressG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e05050"/><stop offset="100%" stop-color="#8b0000"/></linearGradient>
+        <radialGradient id="goldG" cx="50%" cy="50%"><stop offset="0%" stop-color="#d4bc96"/><stop offset="100%" stop-color="#c8a882"/></radialGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <pattern id="leoSkirt" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect width="20" height="20" fill="#8b0000"/>
+          <line x1="0" y1="0" x2="20" y2="20" stroke="#c8a882" stroke-width="1.5" opacity="0.8"/>
+          <line x1="20" y1="0" x2="0" y2="20" stroke="#c8a882" stroke-width="1.5" opacity="0.8"/>
+          <circle cx="10" cy="10" r="3" fill="#d4bc96"/>
+        </pattern>
+      </defs>
+
+      <!-- Veil (behind, flowing) -->
+      <g class="d-veil">
+        <path d="M158 72 Q188 130 196 210 Q200 290 188 370" stroke="rgba(220,100,100,0.32)" stroke-width="26" fill="none" stroke-linecap="round"/>
+        <path d="M158 72 Q182 135 182 220 Q180 300 168 378" stroke="rgba(212,160,23,0.18)" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M158 72 Q178 140 174 228 Q170 310 158 385" stroke="rgba(255,255,255,0.07)" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- Hair back volume -->
+      <ellipse cx="105" cy="66" rx="38" ry="52" fill="#1a0800"/>
+      <path d="M67 78 Q54 115 60 165 Q68 172 75 162 Q70 125 80 88 Z" fill="#1a0800"/>
+      <path d="M143 78 Q156 115 150 165 Q142 172 135 162 Q140 125 130 88 Z" fill="#1a0800"/>
+
+      <!-- Head / Face -->
+      <ellipse cx="105" cy="72" rx="28" ry="30" fill="url(#skinG)"/>
+
+      <!-- Eyes -->
+      <ellipse cx="96" cy="66" rx="5.5" ry="6.5" fill="#1a0800"/>
+      <ellipse cx="114" cy="66" rx="5.5" ry="6.5" fill="#1a0800"/>
+      <ellipse cx="95" cy="64" rx="2.2" ry="2.8" fill="#fff" opacity="0.62"/>
+      <ellipse cx="113" cy="64" rx="2.2" ry="2.8" fill="#fff" opacity="0.62"/>
+      <!-- Eyeliner flick -->
+      <path d="M90 63 Q96 59 102 63" stroke="#1a0800" stroke-width="1.8" fill="none"/>
+      <path d="M108 63 Q114 59 120 63" stroke="#1a0800" stroke-width="1.8" fill="none"/>
+      <line x1="90" y1="63" x2="86" y2="60" stroke="#1a0800" stroke-width="1.2"/>
+      <line x1="120" y1="63" x2="124" y2="60" stroke="#1a0800" stroke-width="1.2"/>
+      <!-- Eyebrows -->
+      <path d="M90 59 Q97 54 103 58" stroke="#2a0a00" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M107 58 Q113 54 120 59" stroke="#2a0a00" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Lips -->
+      <path d="M97 82 Q105 87 113 82 Q105 91 97 82 Z" fill="#c0392b"/>
+      <path d="M97 82 Q105 79 113 82" stroke="#a93226" stroke-width="1.2" fill="none"/>
+      <!-- Blush -->
+      <circle cx="91" cy="76" r="7" fill="#e07070" opacity="0.18"/>
+      <circle cx="119" cy="76" r="7" fill="#e07070" opacity="0.18"/>
+
+      <!-- Headpiece & jewelry -->
+      <path d="M77 62 Q105 52 133 62" stroke="url(#goldG)" stroke-width="2.8" fill="none" filter="url(#glow)"/>
+      <circle cx="105" cy="53" r="6" fill="url(#goldG)" filter="url(#glow)"/>
+      <circle cx="90" cy="56" r="3.5" fill="url(#goldG)"/>
+      <circle cx="120" cy="56" r="3.5" fill="url(#goldG)"/>
+      <!-- Gem on forehead -->
+      <polygon points="105,44 108,50 105,52 102,50" fill="#e74c3c" opacity="0.9"/>
+
+      <!-- Earrings -->
+      <line x1="77" y1="73" x2="75" y2="86" stroke="url(#goldG)" stroke-width="1.8"/>
+      <circle cx="75" cy="90" r="5.5" fill="url(#goldG)" opacity="0.92"/>
+      <line x1="133" y1="73" x2="135" y2="86" stroke="url(#goldG)" stroke-width="1.8"/>
+      <circle cx="135" cy="90" r="5.5" fill="url(#goldG)" opacity="0.92"/>
+
+      <!-- Neck -->
+      <rect x="98" y="100" width="14" height="18" rx="6" fill="url(#skinG)"/>
+      <!-- Necklace -->
+      <path d="M86 106 Q105 116 124 106" stroke="url(#goldG)" stroke-width="1.8" fill="none"/>
+      <circle cx="105" cy="117" r="3.5" fill="url(#goldG)" filter="url(#glow)"/>
+
+      <!-- Left arm (raised, animated) -->
+      <g class="d-arm-l">
+        <path d="M88 122 Q66 104 46 82 Q39 71 36 60" stroke="url(#skinG)" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <circle cx="36" cy="58" r="8" fill="url(#skinG)"/>
+        <!-- Bracelet -->
+        <ellipse cx="54" cy="92" rx="8" ry="4.5" fill="none" stroke="url(#goldG)" stroke-width="2.2" transform="rotate(-42,54,92)"/>
+        <ellipse cx="54" cy="92" rx="5" ry="2.5" fill="none" stroke="url(#goldG)" stroke-width="1" transform="rotate(-42,54,92)" opacity="0.5"/>
+      </g>
+
+      <!-- Right arm (animated) -->
+      <g class="d-arm-r">
+        <path d="M122 122 Q144 104 164 82 Q171 71 174 60" stroke="url(#skinG)" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <circle cx="174" cy="58" r="8" fill="url(#skinG)"/>
+        <!-- Bracelet -->
+        <ellipse cx="156" cy="92" rx="8" ry="4.5" fill="none" stroke="url(#goldG)" stroke-width="2.2" transform="rotate(42,156,92)"/>
+      </g>
+
+      <!-- Shoulders -->
+      <ellipse cx="86" cy="118" rx="18" ry="11" fill="url(#skinG)"/>
+      <ellipse cx="124" cy="118" rx="18" ry="11" fill="url(#skinG)"/>
+
+      <!-- Bra top (decorated) -->
+      <path d="M87 112 Q105 128 123 112 L118 130 Q105 140 92 130 Z" fill="url(#dressG)"/>
+      <path d="M87 112 Q105 128 123 112" stroke="url(#goldG)" stroke-width="2.2" fill="none"/>
+      <path d="M92 130 Q105 140 118 130" stroke="url(#goldG)" stroke-width="1.8" fill="none"/>
+      <circle cx="93" cy="115" r="3" fill="url(#goldG)"/>
+      <circle cx="105" cy="120" r="3" fill="url(#goldG)"/>
+      <circle cx="117" cy="115" r="3" fill="url(#goldG)"/>
+
+      <!-- Midriff -->
+      <path d="M92 131 Q105 139 118 131 L121 157 Q105 163 89 157 Z" fill="url(#skinG)"/>
+      <!-- Belly gem -->
+      <circle cx="105" cy="150" r="4" fill="url(#goldG)" filter="url(#glow)"/>
+
+      <!-- Coin belt -->
+      <rect x="87" y="155" width="36" height="11" rx="5.5" fill="url(#dressG)"/>
+      <path d="M87 155 L123 155" stroke="url(#goldG)" stroke-width="1.2" fill="none"/>
+      <!-- Hanging coins -->
+      <line x1="92" y1="166" x2="92" y2="178" stroke="url(#goldG)" stroke-width="1.4"/>
+      <circle cx="92" cy="181" r="4" fill="url(#goldG)"/>
+      <line x1="100" y1="166" x2="100" y2="180" stroke="url(#goldG)" stroke-width="1.4"/>
+      <circle cx="100" cy="183" r="4" fill="url(#goldG)"/>
+      <line x1="108" y1="166" x2="108" y2="180" stroke="url(#goldG)" stroke-width="1.4"/>
+      <circle cx="108" cy="183" r="4" fill="url(#goldG)"/>
+      <line x1="116" y1="166" x2="116" y2="178" stroke="url(#goldG)" stroke-width="1.4"/>
+      <circle cx="116" cy="181" r="4" fill="url(#goldG)"/>
+
+      <!-- Skirt (hips animated) -->
+      <g class="d-hips">
+        <path d="M86 162 Q52 208 40 294 Q28 372 48 408 Q76 420 105 419 Q134 420 162 408 Q182 372 170 294 Q158 208 124 162 Q105 176 86 162 Z" fill="url(#leoSkirt)"/>
+        <!-- Skirt shimmer lines -->
+        <path d="M86 162 Q62 216 54 278 Q48 340 58 408" fill="none" stroke="rgba(229,115,115,0.28)" stroke-width="1.8"/>
+        <path d="M124 162 Q148 216 156 278 Q162 340 152 408" fill="none" stroke="rgba(229,115,115,0.28)" stroke-width="1.8"/>
+        <!-- Gold hem -->
+        <path d="M48 408 Q105 424 162 408" stroke="url(#goldG)" stroke-width="3.5" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Touch prompt -->
+  <div style="text-align:center;margin-top:4px;">
+    <div class="touch-label">✦ &nbsp;ليلة الحنة&nbsp; ✦</div>
+    <div class="touch-main">اضغطي هنا</div>
+    <div class="touch-sub">لفتح دعوتك 💃</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     INVITATION SCREEN
+══════════════════════════════════════ -->
+<div id="invitation" style="display:none;">
+
+  <!-- ── HERO ── -->
+  <section class="hero-section reveal-section">
+    <span class="reveal-child rd1 s-label">— قالت نعم — نحتفل بليلة حنتها —</span>
+
+    <div style="position:relative;display:inline-block;">
+      <h1 style="font-family:'Dancing Script',cursive;font-size:clamp(62px,13vw,108px);color:var(--gold-light);line-height:1;text-shadow:0 0 44px rgba(212,160,23,.45);">يارا</h1>
+      <div style="position:absolute;top:-12px;right:-34px;font-size:30px;animation:pulseBeat 2s infinite;">💃</div>
+    </div>
+
+    <div class="reveal-child rd2" style="font-family:'Playfair Display',serif;font-size:clamp(16px,3vw,24px);font-style:italic;color:var(--red-light);letter-spacing:3px;margin:12px 0;">ليلة حنة مصرية</div>
+    <div class="reveal-child rd3" style="font-family:'Playfair Display',serif;font-size:clamp(13px,2.5vw,18px);color:var(--gold-pale);letter-spacing:2px;">ليلة من الفرح والموسيقى والأخوات ✨</div>
+
+    <div style="margin:20px auto;max-width:190px;">
+      <svg width="100%" height="18" viewBox="0 0 190 18">
+        <line x1="0" y1="9" x2="76" y2="9" stroke="#c8a882" stroke-width="1.2"/>
+        <text x="95" y="14" text-anchor="middle" font-size="15" fill="#c0392b" font-family="serif">♥</text>
+        <line x1="114" y1="9" x2="190" y2="9" stroke="#c8a882" stroke-width="1.2"/>
+      </svg>
+    </div>
+
+    <p class="reveal-child rd4" style="font-style:italic;font-size:clamp(15px,3vw,20px);color:var(--text-gold);margin:20px 0 6px;">انضمي إلينا للاحتفال بـ</p>
+    <p class="reveal-child rd4" style="font-size:clamp(13px,2.5vw,16px);color:var(--gold-pale);">ليلة مليئة بالفرح والموسيقى وذكريات لا تُنسى 💋</p>
+
+    <div class="reveal-child rd4" style="margin:28px 0;">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,28px);color:var(--cream);letter-spacing:3px;">17 / 7 / 2026</div>
+      <div style="font-size:clamp(13px,2.5vw,15px);color:var(--gold);margin-top:6px;letter-spacing:2px;">الساعة السابعة مساءً · فيلا ٧٠ البنفسج</div>
+    </div>
+
+    <div class="reveal-child rd4" style="animation:shimmer 3s ease-in-out infinite;color:var(--gold);font-size:22px;letter-spacing:10px;">🥂 🔥 💋</div>
+
+    <div class="reveal-child rd4" style="margin-top:24px;">
+      <a class="save-date-btn" href="#" onclick="saveDate(event)">📅 &nbsp; احفظي الموعد</a>
+    </div>
+  </section>
+
+  <!-- ── QUOTE ── -->
+  <section class="reveal-section" style="background:linear-gradient(135deg,#1a0a00,#1a0508);padding:52px 24px;text-align:center;">
+    <p class="reveal-child rd1" style="font-family:'Dancing Script',cursive;font-size:clamp(20px,4vw,32px);color:var(--gold-pale);max-width:600px;margin:0 auto;line-height:1.75;">"آخر مغامرة قبل أن تقول نعم — لنجعلها أسطورية تُحكى."</p>
+    <p class="reveal-child rd2" style="font-size:12px;color:var(--red-light);margin-top:14px;letter-spacing:4px;text-transform:uppercase;">— هنا إلى يارا 💃</p>
+  </section>
+
+  <div class="leo-div"></div>
+
+  <!-- ── COUNTDOWN ── -->
+  <section class="reveal-section" style="background:var(--bg);padding:72px 24px;text-align:center;">
+    <span class="reveal-child rd1 s-label">العد التنازلي لـ</span>
+    <h2 class="reveal-child rd2 s-title">ليلة الحنة 💃</h2>
+    <div class="reveal-child rd3" style="display:flex;justify-content:center;gap:clamp(10px,2.5vw,24px);flex-wrap:wrap;">
+      <div class="cbox"><div class="cnum" id="cd-days">--</div><div class="clbl">يوم</div></div>
+      <div class="cbox"><div class="cnum" id="cd-hours">--</div><div class="clbl">ساعة</div></div>
+      <div class="cbox"><div class="cnum" id="cd-mins">--</div><div class="clbl">دقيقة</div></div>
+      <div class="cbox"><div class="cnum" id="cd-secs">--</div><div class="clbl">ثانية</div></div>
+    </div>
+    <p class="reveal-child rd4" style="margin-top:40px;font-style:italic;font-size:16px;color:var(--leo-tan);">كل ثانية تقربنا من الفرحة ♡</p>
+  </section>
+
+  <div class="gold-div"></div>
+
+  <!-- ── VENUE ── -->
+  <section id="venue-section" class="reveal-section" style="position:relative;min-height:500px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+    <div id="venue-bg" style="background-image:url('alexwest.jpeg')"></div>
+    <script>
+      (function(){
+        var b = document.getElementById('venue-bg');
+        if(!b) return;
+        var img = new Image();
+        img.onload = function() { b.style.backgroundImage = 'url("alexwest.jpeg")'; };
+        img.onerror = function() {
+          var imgJpg = new Image();
+          imgJpg.onload = function() { b.style.backgroundImage = 'url("alexwest.jpg")'; };
+          imgJpg.onerror = function() {
+            b.style.backgroundImage = 'none';
+            b.style.background = 'linear-gradient(160deg,#4a050d,#1e050a,#4a050d)';
+          };
+          imgJpg.src = 'alexwest.jpg';
+        };
+        img.src = 'alexwest.jpeg';
+      })();
+    </script>
+    <div id="venue-overlay"></div>
+    <div id="venue-content">
+      <span class="reveal-child rd1" style="font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(212,160,23,.85);margin-bottom:14px;display:block;text-shadow:0 1px 8px rgba(0,0,0,.6);">وهنا يبدأ كل شيء</span>
+      <h2 class="reveal-child rd2" style="font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,50px);color:#fff;margin-bottom:10px;text-shadow:0 2px 14px rgba(0,0,0,.5);">فيلا ٧٠ البنفسج</h2>
+      <p class="reveal-child rd2" style="font-size:clamp(13px,2vw,16px);color:rgba(255,255,255,.8);letter-spacing:2px;margin-bottom:0;text-shadow:0 1px 6px rgba(0,0,0,.5);">البنفسج ٧ التجمع الأول — القاهرة الجديدة — الدور الأرضي شقة يمين</p>
+      <div class="reveal-child rd3" style="width:60px;height:2px;background:linear-gradient(90deg,#c0392b,#c8a882);margin:20px auto;border-radius:2px;"></div>
+      <p class="reveal-child rd3" style="font-size:clamp(13px,2vw,16px);color:#fff;letter-spacing:3px;margin-bottom:26px;text-shadow:0 1px 6px rgba(0,0,0,.5);">١٧ / ٧ / ٢٠٢٦ &nbsp;·&nbsp; ٧:٠٠ مساءً</p>
+      <div class="reveal-child rd4">
+        <a class="gold-btn" href="https://maps.app.goo.gl/XqxLtr2GPc6oQMuw9" target="_blank" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.45);backdrop-filter:blur(10px);">🗺️ &nbsp; الخريطة</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-div"></div>
+
+  <!-- ── DRESS CODE ── -->
+  <section id="dress-section" class="reveal-section">
+    <span class="reveal-child rd1 s-label">ثيم الليلة</span>
+    <h2 class="reveal-child rd2 s-title">كود اللبس ⚜️</h2>
+    <p class="reveal-child rd3 s-sub">تعالي متألقة — بدون استثناء!</p>
+
+    <div class="reveal-child rd3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:48px auto 0;">
+
+      <!-- Black -->
+      <div style="flex:1;min-width:150px;max-width:190px;position:relative;padding:40px 20px;text-align:center;background:linear-gradient(160deg,#1a1a1a,#0d0d0d,#2a2a2a);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.7);border:1.5px solid rgba(255,255,255,0.1);">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,0.07),transparent 65%);pointer-events:none;"></div>
+        <div style="font-size:52px;margin-bottom:16px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.5));">🖤</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:700;margin-bottom:10px;letter-spacing:1px;">أسود</div>
+        <div style="width:36px;height:2px;background:rgba(255,255,255,0.3);margin:0 auto 12px;"></div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.7);letter-spacing:2px;text-transform:uppercase;line-height:1.8;">جريء<br/>مميز<br/>خالد</div>
+      </div>
+
+      <!-- White -->
+      <div style="flex:1;min-width:150px;max-width:190px;position:relative;padding:40px 20px;text-align:center;background:linear-gradient(160deg,#e8e0d8,#f5f0eb,#d8d0c8);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4);border:1.5px solid rgba(255,255,255,0.6);">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,0.5),transparent 65%);pointer-events:none;"></div>
+        <div style="font-size:52px;margin-bottom:16px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.2));">🤍</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#2a1a1a;font-weight:700;margin-bottom:10px;letter-spacing:1px;">أبيض</div>
+        <div style="width:36px;height:2px;background:rgba(0,0,0,0.2);margin:0 auto 12px;"></div>
+        <div style="font-size:12px;color:rgba(0,0,0,0.6);letter-spacing:2px;text-transform:uppercase;line-height:1.8;">نقاء<br/>شيك<br/>إشراق</div>
+      </div>
+
+      <!-- Gold -->
+      <div style="flex:1;min-width:150px;max-width:190px;position:relative;padding:40px 20px;text-align:center;background:linear-gradient(160deg,#8a6f27,#c8a882,#8a6f27);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(200,168,130,0.4);border:1.5px solid rgba(200,168,130,0.5);">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(244,208,63,0.25),transparent 65%);pointer-events:none;"></div>
+        <div style="font-size:52px;margin-bottom:16px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.4));">✨</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:700;margin-bottom:10px;letter-spacing:1px;">ذهبي</div>
+        <div style="width:36px;height:2px;background:rgba(255,255,255,0.4);margin:0 auto 12px;"></div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.85);letter-spacing:2px;text-transform:uppercase;line-height:1.8;">لامع<br/>أنيق<br/>فاخر</div>
+      </div>
+
+      <!-- Burgundy -->
+      <div style="flex:1;min-width:150px;max-width:190px;position:relative;padding:40px 20px;text-align:center;background:linear-gradient(160deg,#3a0010,#800020,#4a0015);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(128,0,32,0.5);border:1.5px solid rgba(128,0,32,0.5);">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(200,50,80,0.2),transparent 65%);pointer-events:none;"></div>
+        <div style="font-size:52px;margin-bottom:16px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.5));">🌹</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:700;margin-bottom:10px;letter-spacing:1px;">بورجندي</div>
+        <div style="width:36px;height:2px;background:rgba(255,255,255,0.4);margin:0 auto 12px;"></div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.8);letter-spacing:2px;text-transform:uppercase;line-height:1.8;">عميق<br/>رومانسي<br/>ملكي</div>
+      </div>
+
+      <!-- Red -->
+      <div style="flex:1;min-width:150px;max-width:190px;position:relative;padding:40px 20px;text-align:center;background:linear-gradient(160deg,#5c0612,#c0392b,#8b0000);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(192,57,43,0.4);border:1.5px solid rgba(192,57,43,0.4);">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,100,100,0.18),transparent 65%);pointer-events:none;"></div>
+        <div style="font-size:52px;margin-bottom:16px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.4));">💃</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:700;margin-bottom:10px;letter-spacing:1px;">أحمر</div>
+        <div style="width:36px;height:2px;background:rgba(255,255,255,0.4);margin:0 auto 12px;"></div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.8);letter-spacing:2px;text-transform:uppercase;line-height:1.8;">جريء<br/>عاطفي<br/>مشتعل</div>
+      </div>
+
+    </div>
+
+    <div class="reveal-child rd4" style="margin-top:28px;display:inline-block;border:1px solid rgba(212,160,23,0.35);border-radius:50px;padding:10px 28px;">
+      <span style="font-size:13px;color:var(--gold);letter-spacing:2px;">✦ &nbsp;امزجي وطابقي — الأناقة غير قابلة للتفاوض&nbsp; ✦</span>
+    </div>
+  </section>
+
+  <div class="leo-div"></div>
+
+  <!-- ── DARE WHEEL ── -->
+  <section id="spin-section" class="reveal-section">
+    <span class="reveal-child rd1 s-label">متعة ليلة الحنة</span>
+    <h2 class="reveal-child rd2 s-title">عجلة التحديات 🎡</h2>
+    <p class="reveal-child rd3 s-sub">دوّري عجلة الفوضى! العروسة (أو أنتِ) لازم تنفّذي التحدي. بدون أعذار!</p>
+    
+    <div class="reveal-child rd4" style="margin-top:32px;position:relative;display:inline-block;">
+      <canvas id="wheel-canvas" width="320" height="320"></canvas>
+      <div id="wheel-pointer" style="position:absolute;top:50%;right:-12px;transform:translateY(-50%) rotate(180deg);width:0;height:0;border-top:15px solid transparent;border-bottom:15px solid transparent;border-left:25px solid var(--gold);filter:drop-shadow(0 0 10px rgba(212,160,23,0.8));z-index:10;"></div>
+    </div>
+    
+    <div class="reveal-child rd4" style="margin-top:24px;">
+      <button class="primary-btn" id="spin-btn" onclick="spinWheel()">دوّري العجلة 💋</button>
+    </div>
+    
+    <div id="spin-result">
+      <h4 style="font-family:'Playfair Display',serif;color:var(--gold);font-size:18px;margin-bottom:6px;">تحديك:</h4>
+      <p id="spin-dare-text" style="font-size:15px;color:var(--cream);font-style:italic;line-height:1.6;"></p>
+    </div>
+  </section>
+
+  <div class="gold-div"></div>
+
+  <!-- ── SONG REQUEST & FORMS ── -->
+  <section id="songs-section" class="reveal-section">
+    <span class="reveal-child rd1 s-label">البلاي ليست</span>
+    <h2 class="reveal-child rd2 s-title">اطلبي أغنية 🎵</h2>
+    <p class="reveal-child rd3 s-sub">ساعدينا نبني أحلى بلاي ليست للحفلة! أي أغنية هتخليك ترقصي؟</p>
+    
+    <div class="reveal-child rd4 form-wrap">
+      <div style="margin-bottom:16px;">
+        <label class="f-label" for="song-name">اسمك</label>
+        <input type="text" id="song-name" class="f-input" placeholder="مثال: جاسمين">
+      </div>
+      <div style="margin-bottom:20px;">
+        <label class="f-label" for="song-title">اسم الأغنية والفنان</label>
+        <input type="text" id="song-title" class="f-input" placeholder="مثال: Tamally Maak - Amr Diab">
+      </div>
+      <button class="primary-btn" style="width:100%;" onclick="submitSong()">أضيفي للبلاي ليست 🎶</button>
+      <p id="song-msg" style="color:var(--gold);font-size:13px;font-style:italic;margin-top:10px;display:none;"></p>
+    </div>
+  </section>
+
+  <div class="gold-div"></div>
+
+  <!-- ── RSVP ── -->
+  <section id="rsvp-section" class="reveal-section">
+    <span class="reveal-child rd1 s-label">هل أنتِ معنا؟</span>
+    <h2 class="reveal-child rd2 s-title">انضمي للاحتفال 💋</h2>
+    <p class="reveal-child rd3 s-sub">أعلمينا إذا كنتِ قادمة لليلة حنة يارا قبل ١٠ يوليو ٢٠٢٦.</p>
+    
+    <div class="reveal-child rd4 form-wrap">
+      <div style="margin-bottom:16px;">
+        <label class="f-label" for="rsvp-name">اسمك</label>
+        <input type="text" id="rsvp-name" class="f-input" placeholder="مثال: ليلى">
+      </div>
+      <div style="margin-bottom:20px;">
+        <label class="f-label" for="rsvp-attending">هل ستحضرين؟</label>
+        <select id="rsvp-attending" class="f-input">
+          <option value="yes">نعم، هنا أنا! 💃</option>
+          <option value="no">لأ، معنديش وقت 😢</option>
+        </select>
+      </div>
+      
+      <!-- Interactive Kiss RSVP button instead of a simple form button -->
+      <div class="rsvp-kiss-wrap" onclick="submitRSVP()">
+        <div class="rsvp-kiss-mark">💋</div>
+        <div class="rsvp-kiss-label">اضغطي لتختمي بقبلة</div>
+      </div>
+    </div>
+    
+    <div id="rsvp-confirm" style="margin-top:32px;">
+      <div style="font-size:48px;margin-bottom:12px;">🎉</div>
+      <h3 style="font-family:'Playfair Display',serif;color:var(--gold);font-size:22px;margin-bottom:8px;">تم تسجيل ردك!</h3>
+      <p id="rsvp-confirm-text" style="font-size:15px;color:var(--cream);font-style:italic;line-height:1.6;"></p>
+    </div>
+  </section>
+
+  <!-- ── CINEMATIC ENDING ── -->
+  <section id="cinematic-ending" class="reveal-section">
+    <div class="ending-stars" id="ending-stars"></div>
+    <div class="ending-particles" id="ending-particles"></div>
+    <div class="ending-quote">
+      "ليلة من الموسيقى والحنة والأخوات قبل اليوم الكبير."
+    </div>
+  </section>
+
+</div><!-- /#invitation -->
+
+<script type="module">
+/* ══════════════════════════════════════
+     CORE CONTROLLER & WIDGET SCRIPTS
+══════════════════════════════════════ */
+
+/* ── Starfield Animation ── */
+(function(){
+  const c = document.getElementById('dancer-stars');
+  if(!c) return;
+  for(let i=0; i<60; i++){
+    const sz = Math.random()*2.5+0.5;
+    const star = document.createElement('div');
+    star.style.cssText = `
+      position: absolute;
+      width: ${sz}px;
+      height: ${sz}px;
+      border-radius: 50%;
+      background: #fff;
+      left: ${Math.random()*100}%;
+      top: ${Math.random()*100}%;
+      opacity: ${Math.random()*.6+.1};
+      animation: starTwinkle ${2+Math.random()*3}s ${Math.random()*2}s ease-in-out infinite;
+    `;
+    c.appendChild(star);
+  }
+})();
+
+/* ── Music Player Logic ── */
+let musicStarted = false;
+let muted = false;
+const bgm = document.getElementById('bgm');
+bgm.volume = 0;
+
+function fadeInMusic() {
+  if (musicStarted) return;
+  musicStarted = true;
+  bgm.play().then(() => {
+    let vol = 0;
+    const interval = setInterval(() => {
+      vol = Math.min(vol + 0.02, 0.6);
+      bgm.volume = vol;
+      if (vol >= 0.6) clearInterval(interval);
+    }, 100);
+    const btn = document.getElementById('music-btn');
+    btn.style.display = 'flex';
+    btn.textContent = '🔊';
+  }).catch(() => {
+    const btn = document.getElementById('music-btn');
+    btn.style.display = 'flex';
+    btn.textContent = '▶';
+  });
+}
+
+function toggleMusic() {
+  const btn = document.getElementById('music-btn');
+  if (!musicStarted) {
+    bgm.play();
+    musicStarted = true;
+    bgm.volume = 0.6;
+    btn.textContent = '🔊';
+  } else if (muted) {
+    bgm.muted = false;
+    muted = false;
+    btn.textContent = '🔊';
+  } else {
+    bgm.muted = true;
+    muted = true;
+    btn.textContent = '🔇';
+  }
+}
+
+/* ── Confetti Spawner ── */
+function spawnConfetti() {
+  const colors = ['#c0392b', '#c8a882', '#f0e6d0', '#c9956c', '#ffffff'];
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    el.style.cssText = `
+      left: ${20 + Math.random() * 60}%;
+      top: -10px;
+      background: ${colors[i % colors.length]};
+      animation-duration: ${1.5 + Math.random() * 2}s;
+      animation-delay: ${Math.random() * 0.4}s;
+      transform: rotate(${Math.random() * 360}deg);
+    `;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 4000);
+  }
+}
+
+/* ── Open Envelope / Invitation ── */
+function openInvitation() {
+  const screen = document.getElementById('dancer-screen');
+  screen.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+  screen.style.opacity = '0';
+  screen.style.transform = 'scale(0.95)';
+  
+  spawnConfetti();
+  fadeInMusic();
+  
+  setTimeout(() => {
+    screen.style.display = 'none';
+    const invitation = document.getElementById('invitation');
+    invitation.style.display = 'block';
+    
+    // Start countdown
+    startCountdown();
+    // Initialize Dare Wheel Canvas
+    initDareWheel();
+    // Run reveals
+    initScrollReveal();
+    initCinematicEnding();
+  }, 600);
+}
+
+/* ── Save Date ICS Generator ── */
+function saveDate(e) {
+  e.preventDefault();
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'BEGIN:VEVENT',
+    'DTSTART:20260717T190000',
+    'DTEND:20260718T020000',
+    'SUMMARY:ليلة حنة يارا',
+    'LOCATION:فيلا ٧٠ البنفسج ٧ التجمع الأول القاهرة الجديدة',
+    'DESCRIPTION:احتفلي معنا بليلة حنة يارا بالموسيقى والرقص وذكريات لا تُنسى!',
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+
+  const blob = new Blob([ics], { type: 'text/calendar' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'yara-henna.ics';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
+/* ── Countdown Timer ── */
+function startCountdown() {
+  const target = new Date('2026-07-17T19:00:00');
+  const pad = n => String(n).padStart(2, '0');
+  
+  function update() {
+    const diff = Math.max(0, target - new Date());
+    document.getElementById('cd-days').textContent = pad(Math.floor(diff / 86400000));
+    document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    document.getElementById('cd-mins').textContent = pad(Math.floor((diff % 3600000) / 60000));
+    document.getElementById('cd-secs').textContent = pad(Math.floor((diff % 60000) / 1000));
+  }
+  update();
+  setInterval(update, 1000);
+}
+
+
+/* ── Canvas Dare Wheel ── */
+const dares = [
+  "ارقصي رقص شرقي ٣٠ ثانية 💃",
+  "احضني العروسة حضن كبير 💖",
+  "اخطبي كرسي! 💍",
+  "التقطي سيلفي جماعي 📸",
+  "مبارزة حركات رقص 💥",
+  "صرّخي 'يارا العروسة!' 📣",
+  "غنّي جزء من أغنية حب 🎤",
+  "اعترفي بسر مضحك 🤫"
+];
+
+let wheelAngle = 0;
+let isSpinning = false;
+const canvas = document.getElementById('wheel-canvas');
+
+function initDareWheel() {
+  if (!canvas) return;
+  drawWheel();
+}
+
+function drawWheel() {
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width;
+  const h = canvas.height;
+  const cx = w / 2;
+  const cy = h / 2;
+  const r = cx - 12;
+  
+  ctx.clearRect(0, 0, w, h);
+  
+  const colors = ['#8b0000', '#2a0c14', '#c9956c', '#4a2e00', '#c0392b', '#1e080e', '#c8a882', '#120508'];
+  const totalSlices = dares.length;
+  const sliceAngle = (Math.PI * 2) / totalSlices;
+  
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.rotate(wheelAngle);
+  
+  for(let i=0; i<totalSlices; i++) {
+    const angleStart = i * sliceAngle;
+    const angleEnd = angleStart + sliceAngle;
+    
+    // Draw slice
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.arc(0, 0, r, angleStart, angleEnd);
+    ctx.closePath();
+    ctx.fillStyle = colors[i % colors.length];
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(212,160,23,0.3)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Add text label
+    ctx.save();
+    ctx.rotate(angleStart + sliceAngle / 2);
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#fdf2e9';
+    ctx.font = 'bold 11px DM Sans, sans-serif';
+    
+    const maxTextWidth = r - 30;
+    let text = dares[i];
+    ctx.fillText(text, r - 15, 0);
+    ctx.restore();
+  }
+  
+  // Center cap decoration
+  ctx.beginPath();
+  ctx.arc(0, 0, 24, 0, Math.PI*2);
+  ctx.fillStyle = 'rgba(20,5,8,0.9)';
+  ctx.fill();
+  ctx.strokeStyle = '#c8a882';
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  
+  ctx.restore();
+  
+  // Outer frame
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI*2);
+  ctx.strokeStyle = '#c8a882';
+  ctx.lineWidth = 4;
+  ctx.stroke();
+}
+
+function spinWheel() {
+  if (isSpinning) return;
+  isSpinning = true;
+  document.getElementById('spin-result').style.display = 'none';
+  
+  let spinVel = Math.random() * 0.4 + 0.3; // Speed
+  const decay = 0.982; // Deceleration rate
+  
+  function anim() {
+    spinVel *= decay;
+    wheelAngle += spinVel;
+    drawWheel();
+    
+    if (spinVel < 0.0015) {
+      isSpinning = false;
+      
+      // Calculate selected slice
+      const normAngle = (Math.PI * 2 - (wheelAngle % (Math.PI * 2))) % (Math.PI * 2);
+      const totalSlices = dares.length;
+      const sliceIdx = Math.floor(normAngle / ((Math.PI * 2) / totalSlices));
+      
+      const text = dares[sliceIdx];
+      
+      const res = document.getElementById('spin-result');
+      document.getElementById('spin-dare-text').textContent = text;
+      res.style.display = 'block';
+      res.style.animation = 'rsvpPop .4s ease both';
+      
+      spawnConfetti();
+    } else {
+      requestAnimationFrame(anim);
+    }
+  }
+  anim();
+}
+
+/* ── Song Playlist requests ── */
+async function submitSong() {
+  const nameEl = document.getElementById('song-name');
+  const titleEl = document.getElementById('song-title');
+  const msgEl = document.getElementById('song-msg');
+
+  const name = nameEl.value.trim();
+  const title = titleEl.value.trim();
+
+  if(!name || !title) {
+    msgEl.style.color = '#e57373';
+    msgEl.textContent = 'اكتبي اسمك والأغنية! 💋';
+    msgEl.style.display = 'block';
+    return;
+  }
+
+  try {
+    await addDoc(collection(_db, "Song Requests"), {
+      name: name,
+      song: title,
+      submittedAt: serverTimestamp()
+    });
+    msgEl.style.color = 'var(--gold)';
+    msgEl.textContent = 'اتضافت الأغنية للبلاي ليست! 🎶';
+  } catch(e) {
+    console.error("Firebase error:", e);
+    msgEl.style.color = '#e57373';
+    msgEl.textContent = 'في مشكلة، حاولي تاني! 💔';
+  }
+
+  msgEl.style.display = 'block';
+  nameEl.value = '';
+  titleEl.value = '';
+  spawnConfetti();
+}
+
+
+/* ── RSVP Submissions ── */
+/* ── Firebase RSVP ── */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCK-g9bi9EKBD9nl-BVm9Ijg9IQmCR-C-w",
+  authDomain: "nono-sbach.firebaseapp.com",
+  projectId: "nono-sbach",
+  storageBucket: "nono-sbach.firebasestorage.app",
+  messagingSenderId: "30010256686",
+  appId: "1:30010256686:web:49f85193952179e6691ebf"
+};
+const _fbApp = initializeApp(firebaseConfig);
+const _db = getFirestore(_fbApp);
+
+async function submitRSVP() {
+  const nameEl = document.getElementById('rsvp-name');
+  const attendEl = document.getElementById('rsvp-attending');
+  const name = nameEl.value.trim();
+
+  if(!name) {
+    alert("اكتبي اسمك عشان تتأكدي 💋");
+    return;
+  }
+
+  const status = attendEl.value;
+  const kissBtn = document.querySelector('.rsvp-kiss-wrap');
+  if(kissBtn) { kissBtn.style.opacity = '0.5'; kissBtn.style.pointerEvents = 'none'; }
+
+  try {
+    await addDoc(collection(_db, "Guest list"), {
+      name: name,
+      attending: status,
+      submittedAt: serverTimestamp()
+    });
+  } catch(e) {
+    console.error("Firebase error:", e);
+  }
+
+  const confirmText = status === 'yes'
+    ? `يسلموا إيدك يا ${name}! اسمك اتسجّل في ليلة حنة يارا بفيلا ٧٠ البنفسج. استعدي لليلة ما تنسيهاش 🥂✨`
+    : `آه يا ${name}، هنفتقدك أوي في الليلة دي. هنرفع كأسنا عليكِ من بعيد! 💔`;
+
+  document.getElementById('rsvp-confirm-text').textContent = confirmText;
+  document.getElementById('rsvp-confirm').style.display = 'block';
+  document.getElementById('rsvp-confirm').style.animation = 'rsvpPop .5s ease both';
+
+  nameEl.value = '';
+  spawnConfetti();
+}
+
+/* ── Cinematic scroll observer triggers ── */
+function initScrollReveal() {
+  const sections = document.querySelectorAll('.reveal-section');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        if(entry.target.id === 'cinematic-ending') {
+          triggerCinematicEndingParticles();
+        }
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+  sections.forEach(sec => observer.observe(sec));
+}
+
+/* ── Ending Background Particles ── */
+function initCinematicEnding() {
+  const container = document.getElementById('ending-stars');
+  if(!container) return;
+  
+  for(let i=0; i<45; i++) {
+    const star = document.createElement('div');
+    const sz = Math.random() * 2 + 0.5;
+    star.style.cssText = `
+      position: absolute;
+      width: ${sz}px;
+      height: ${sz}px;
+      border-radius: 50%;
+      background: #fff;
+      left: ${Math.random()*100}%;
+      top: ${Math.random()*100}%;
+      opacity: ${Math.random()*.5+.1};
+      animation: starTwinkle ${2+Math.random()*3}s ${Math.random()*2}s ease-in-out infinite;
+    `;
+    container.appendChild(star);
+  }
+}
+
+let endingParticlesInterval = null;
+function triggerCinematicEndingParticles() {
+  const container = document.getElementById('ending-particles');
+  if(!container || endingParticlesInterval) return;
+  
+  const colors = ['#c8a882', '#e57373', '#f0e6d0'];
+  
+  function spawnParticle() {
+    if(container.childElementCount > 40) return;
+    
+    const p = document.createElement('div');
+    const sz = Math.random() * 3.5 + 1.5;
+    const duration = Math.random() * 6 + 5; // 5s to 11s
+    
+    p.style.cssText = `
+      position: absolute;
+      width: ${sz}px;
+      height: ${sz}px;
+      border-radius: 50%;
+      background: ${colors[Math.floor(Math.random()*colors.length)]};
+      left: ${Math.random()*100}%;
+      bottom: -10px;
+      opacity: 0;
+      pointer-events: none;
+      animation: endingDrift ${duration}s ease-in-out forwards;
+    `;
+    container.appendChild(p);
+    setTimeout(() => p.remove(), duration * 1000);
+  }
+  endingParticlesInterval = setInterval(spawnParticle, 280);
+}
+
+/* ── Pre-loader Fading triggers ── */
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('loading-screen');
+    if (loader) {
+      loader.style.opacity = '0';
+      loader.style.visibility = 'hidden';
+      setTimeout(() => loader.remove(), 850);
+    }
+  }, 2400);
+});
+
+/* expose to window for inline onclick handlers */
+window.toggleMusic = toggleMusic;
+window.openInvitation = openInvitation;
+window.saveDate = saveDate;
+window.spinWheel = spinWheel;
+window.submitSong = submitSong;
+window.submitRSVP = submitRSVP;
+
+</script>
+</body>
+</html>
